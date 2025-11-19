@@ -1,4 +1,4 @@
 import streamlit as st
 import pandas as pd
 
-st.title("Uber pickups in New York City")
+st.title("Uber Pickups in NYC")
