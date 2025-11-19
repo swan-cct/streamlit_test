@@ -8,6 +8,7 @@ DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
          'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
 DATE_COLUMN = 'date/time'
 
+@st.cache_data
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
     
@@ -21,4 +22,5 @@ data_load_state = st.text("Loading data ...")
 data = load_data(10000)
 data_load_state = st.text("Data loaded!")
 
-st.dataframe(data)
+st.subheader("Raw Data")
+st.write(data)
